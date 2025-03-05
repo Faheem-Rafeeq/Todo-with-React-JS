@@ -21,19 +21,16 @@ function App() {
     description.current.value = "";
   };
 
-  const deleteTodo = (index) => {
-    const updatedTodos = [...todos]; // Create a copy of the array
-    updatedTodos.splice(index, 1); // Remove item at index
-    setTodos(updatedTodos); // Update state
+  const deleteTodo = (index) => {; 
+    todos.splice(index, 1); 
+    setTodos([...todos]);
   };
 
   const editTodo = (index) => {
     const newTodo = prompt("Enter new todo");
-    if (newTodo) {
-      const updatedTodos = [...todos]; // Copy state
-      updatedTodos[index].title = newTodo; // Update title
-      setTodos(updatedTodos); // Set updated state
-    }
+    todos[index].title = newTodo
+    setTodos([...todos]);
+
   };
 
   return (
